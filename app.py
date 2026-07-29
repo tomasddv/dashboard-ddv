@@ -33,7 +33,7 @@ DASHBOARDS = [
         "group": "Operaciones",
     },
     {
-        "name": "Planificacion DDV",
+        "name": "VENTA DIARIA DDV",
         "description": "Planificacion diaria y seguimiento DDV.",
         "url": "https://planificacionddv.streamlit.app/",
         "group": "Planificacion",
@@ -42,10 +42,10 @@ DASHBOARDS = [
         "name": "Repagos",
         "description": "Revision de repagos y estado de gestion.",
         "url": "https://repagos.streamlit.app/",
-        "group": "Finanzas",
+        "group": "EDF",
     },
     {
-        "name": "KPIs Foco",
+        "name": "KPIs Foco Y Gestion de CNC",
         "description": "Indicadores clave para seguimiento de foco.",
         "url": "https://kpisfoco.streamlit.app/",
         "group": "Indicadores",
@@ -72,7 +72,7 @@ DASHBOARDS = [
         "name": "CxC DDV",
         "description": "Seguimiento de cuentas por cobrar DDV.",
         "url": "https://cxcddv.streamlit.app/",
-        "group": "Finanzas",
+        "group": "TICKETS",
     },
 ]
 

@@ -30,7 +30,7 @@ DASHBOARDS = [
         "name": "Tope Bultos",
         "description": "Control operativo de topes y volumen de bultos.",
         "url": "https://topebultos.streamlit.app/",
-        "group": "TOPES",
+        "group": "Operaciones",
     },
     {
         "name": "Planificacion DDV",
@@ -42,17 +42,17 @@ DASHBOARDS = [
         "name": "Repagos",
         "description": "Revision de repagos y estado de gestion.",
         "url": "https://repagos.streamlit.app/",
-        "group": "EDF",
+        "group": "Finanzas",
     },
     {
-        "name": "KPIs Foco y CNC ACUMULADO",
-        "description": "Indicadores clave para seguimiento de CNC.",
+        "name": "KPIs Foco",
+        "description": "Indicadores clave para seguimiento de foco.",
         "url": "https://kpisfoco.streamlit.app/",
         "group": "Indicadores",
     },
     {
-        "name": "Planificacion VOLUMEN",
-        "description": "Planificacion y consulta del tablero VOLUMEN.",
+        "name": "Planificacion IFEE",
+        "description": "Planificacion y consulta del tablero IFEE.",
         "url": "https://planificacion-ifeevprb7is4zwjk6k5suo.streamlit.app/",
         "group": "Planificacion",
     },
@@ -70,9 +70,9 @@ DASHBOARDS = [
     },
     {
         "name": "CxC DDV",
-        "description": "Seguimiento de TICKETS.",
+        "description": "Seguimiento de cuentas por cobrar DDV.",
         "url": "https://cxcddv.streamlit.app/",
-        "group": "TICKETS",
+        "group": "Finanzas",
     },
 ]
 
@@ -196,7 +196,32 @@ st.markdown(
     div[data-testid="column"] {
         margin-bottom: 18px;
     }
+    .watermark {
+        position: fixed;
+        left: 14px;
+        bottom: 14px;
+        z-index: 999;
+        color: rgba(24, 33, 47, 0.42);
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        pointer-events: none;
+        user-select: none;
+    }
+    .watermark-pi {
+        font-family: Georgia, serif;
+        font-size: 1.04rem;
+        font-weight: 700;
+    }
     </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+st.markdown(
+    """
+    <div class="watermark">by :Q<span class="watermark-pi">&pi;</span>U</div>
     """,
     unsafe_allow_html=True,
 )

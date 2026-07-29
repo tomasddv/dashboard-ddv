@@ -1,3 +1,4 @@
+import base64
 from pathlib import Path
 
 import streamlit as st
@@ -9,6 +10,12 @@ LOGO_CANDIDATES = [
     BASE_DIR / "logo-distribuidora-del-valle.png",
 ]
 LOGO_PATH = next((path for path in LOGO_CANDIDATES if path.exists()), None)
+
+
+def image_data_uri(path):
+    image_bytes = path.read_bytes()
+    encoded = base64.b64encode(image_bytes).decode("utf-8")
+    return f"data:image/png;base64,{encoded}"
 
 
 st.set_page_config(
@@ -90,6 +97,20 @@ st.markdown(
         margin-bottom: 22px;
         box-shadow: 0 1px 2px rgba(16, 24, 39, 0.06);
     }
+    .hero-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+    }
+    .hero-copy {
+        min-width: 0;
+    }
+    .hero-logo {
+        width: min(380px, 34vw);
+        height: auto;
+        flex: 0 1 380px;
+    }
     .eyebrow {
         color: #69748a;
         font-size: 0.78rem;
@@ -110,6 +131,15 @@ st.markdown(
         color: #4f5c70;
         font-size: 1rem;
         line-height: 1.65;
+    }
+    @media (max-width: 820px) {
+        .hero-header {
+            align-items: flex-start;
+            flex-direction: column-reverse;
+        }
+        .hero-logo {
+            width: min(420px, 100%);
+        }
     }
     .card {
         min-height: 292px;
@@ -172,16 +202,16 @@ st.markdown(
 )
 
 
-if LOGO_PATH:
-    with st.container():
-        st.image(str(LOGO_PATH), width=520)
-
-
 st.markdown(
     f"""
     <div class="hero">
-        <div class="eyebrow">Centro de accesos</div>
-        <h1>Dashboards DDV</h1>
+        <div class="hero-header">
+            <div class="hero-copy">
+                <div class="eyebrow">Centro de accesos</div>
+                <h1>Dashboards DDV</h1>
+            </div>
+            {f'<img class="hero-logo" src="{image_data_uri(LOGO_PATH)}" alt="Distribuidora del Valle">' if LOGO_PATH else ''}
+        </div>
         <p>Acceso rapido a los tableros operativos, comerciales y financieros. Hay {len(DASHBOARDS)} accesos disponibles.</p>
     </div>
     """,

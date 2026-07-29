@@ -1,4 +1,14 @@
+from pathlib import Path
+
 import streamlit as st
+
+
+BASE_DIR = Path(__file__).parent
+LOGO_CANDIDATES = [
+    BASE_DIR / "assets" / "logo-distribuidora-del-valle.png",
+    BASE_DIR / "logo-distribuidora-del-valle.png",
+]
+LOGO_PATH = next((path for path in LOGO_CANDIDATES if path.exists()), None)
 
 
 st.set_page_config(
@@ -160,6 +170,11 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+
+if LOGO_PATH:
+    with st.container():
+        st.image(str(LOGO_PATH), width=520)
 
 
 st.markdown(

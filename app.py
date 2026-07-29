@@ -102,7 +102,7 @@ st.markdown(
         line-height: 1.65;
     }
     .card {
-        height: 235px;
+        min-height: 292px;
         background: #ffffff;
         border: 1px solid #d8dee8;
         border-radius: 8px;
@@ -128,6 +128,7 @@ st.markdown(
         font-size: 1.18rem;
         line-height: 1.25;
         color: #18212f;
+        min-height: 3rem;
     }
     .card p {
         margin: 0;
@@ -138,6 +139,7 @@ st.markdown(
     .card a {
         display: block;
         width: 100%;
+        box-sizing: border-box;
         text-align: center;
         background: #18212f;
         color: #ffffff !important;
@@ -150,6 +152,9 @@ st.markdown(
     .card a:hover {
         background: #2454a6;
         text-decoration: none;
+    }
+    div[data-testid="column"] {
+        margin-bottom: 18px;
     }
     </style>
     """,

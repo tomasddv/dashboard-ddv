@@ -30,7 +30,7 @@ DASHBOARDS = [
         "name": "Tope Bultos",
         "description": "Control operativo de topes y volumen de bultos.",
         "url": "https://topebultos.streamlit.app/",
-        "group": "Operaciones",
+        "group": "TOPES",
     },
     {
         "name": "Planificacion DDV",
@@ -42,17 +42,17 @@ DASHBOARDS = [
         "name": "Repagos",
         "description": "Revision de repagos y estado de gestion.",
         "url": "https://repagos.streamlit.app/",
-        "group": "Finanzas",
+        "group": "EDF",
     },
     {
-        "name": "KPIs Foco",
-        "description": "Indicadores clave para seguimiento de foco.",
+        "name": "KPIs Foco y CNC ACUMULADO",
+        "description": "Indicadores clave para seguimiento de CNC.",
         "url": "https://kpisfoco.streamlit.app/",
         "group": "Indicadores",
     },
     {
-        "name": "Planificacion IFEE",
-        "description": "Planificacion y consulta del tablero IFEE.",
+        "name": "Planificacion VOLUMEN",
+        "description": "Planificacion y consulta del tablero VOLUMEN.",
         "url": "https://planificacion-ifeevprb7is4zwjk6k5suo.streamlit.app/",
         "group": "Planificacion",
     },
@@ -70,9 +70,9 @@ DASHBOARDS = [
     },
     {
         "name": "CxC DDV",
-        "description": "Seguimiento de cuentas por cobrar DDV.",
+        "description": "Seguimiento de TICKETS.",
         "url": "https://cxcddv.streamlit.app/",
-        "group": "Finanzas",
+        "group": "TICKETS",
     },
 ]
 

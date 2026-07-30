@@ -31,48 +31,63 @@ DASHBOARDS = [
         "description": "Control operativo de topes y volumen de bultos.",
         "url": "https://topebultos.streamlit.app/",
         "group": "Operaciones",
+        "icon": "📦",
     },
     {
-        "name": "VENTA DIARIA DDV",
+        "name": "Planificacion DDV",
         "description": "Planificacion diaria y seguimiento DDV.",
         "url": "https://planificacionddv.streamlit.app/",
         "group": "Planificacion",
+        "icon": "📅",
     },
     {
         "name": "Repagos",
         "description": "Revision de repagos y estado de gestion.",
         "url": "https://repagos.streamlit.app/",
-        "group": "EDF",
+        "group": "Finanzas",
+        "icon": "💳",
     },
     {
-        "name": "KPIs Foco Y Gestion de CNC",
+        "name": "KPIs Foco",
         "description": "Indicadores clave para seguimiento de foco.",
         "url": "https://kpisfoco.streamlit.app/",
         "group": "Indicadores",
+        "icon": "📈",
     },
     {
         "name": "Planificacion IFEE",
         "description": "Planificacion y consulta del tablero IFEE.",
         "url": "https://planificacion-ifeevprb7is4zwjk6k5suo.streamlit.app/",
         "group": "Planificacion",
+        "icon": "🗓️",
     },
     {
         "name": "NPS DDV",
         "description": "Analisis de satisfaccion y experiencia DDV.",
         "url": "https://npsddv.streamlit.app/",
         "group": "Experiencia",
+        "icon": "⭐",
     },
     {
         "name": "Reunion semanal ventas",
         "description": "Documento Loop para la reunion semanal.",
         "url": "https://loop.cloud.microsoft/p/eyJ3Ijp7InUiOiJodHRwczovL2dydXBvdmVuZXJvbmkuc2hhcmVwb2ludC5jb20vP25hdj1jejBsTWtZbVpEMWlJVXB6TTNWWU5GVmlNR3RYWlhSQ2JtdElkbkJWUXpSWWJqWnViakl5Tm1oSWRtVlRNVWhqZFU5Vk5ISnNhMUk0ZVRFMFRtaFVORkF4YmxKUE56VXdhSFltWmowd01USlpWakpQU0VFeVdrVXpOVUpHVFUxYVdrWkxSbFJSTWxkUVNVUlpTMGhZSm1NOUptWnNkV2xrUFRFJTNEIiwiciI6ZmFsc2V9LCJwIjp7InUiOiJodHRwczovL2dydXBvdmVuZXJvbmkuc2hhcmVwb2ludC5jb20vY29udGVudHN0b3JhZ2UvQ1NQXzVmZWVjZDI2LTFiODUtNDVkMi05ZWI0LTE5ZTQxZWZhNTQwYi9sYSUyMEJpYmxpb3RlY2ElMjBkZSUyMGRvY3VtZW50b3MvTG9vcEFwcERhdGEvUExBTlRJTExBJTIwJTIwUkVVTklPTiUyMFNFTUFOQUwlMjBERSUyMFZFTlRBUyUyMDEubG9vcD9uYXY9Y3owbE1rWmpiMjUwWlc1MGMzUnZjbUZuWlNVeVJrTlRVRjgxWm1WbFkyUXlOaTB4WWpnMUxUUTFaREl0T1dWaU5DMHhPV1UwTVdWbVlUVTBNR0ltWkQxaUlVcHpNM1ZZTkZWaU1HdFhaWFJDYm10SWRuQlZRelJZYmpadWJqSXlObWhJZG1WVE1VaGpkVTlWTkhKc2ExSTRlVEUwVG1oVU5GQXhibEpQTnpVd2FIWW1aajB3TVRKWlZqSlBTRVkzVjFoWFNrZENNMUJZTlVOS05GWkRVVTFQU2tSSVNWaE1KbU05SlRKR0ptWnNkV2xrUFRFJTNEIiwiciI6ZmFsc2V9LCJpIjp7ImkiOiJhNGMyY2M1My01YWE2LTRkNjMtODhmYS0yNDYyYzZmYzRlMWIifX0",
         "group": "Ventas",
+        "icon": "🤝",
     },
     {
         "name": "CxC DDV",
         "description": "Seguimiento de cuentas por cobrar DDV.",
         "url": "https://cxcddv.streamlit.app/",
-        "group": "TICKETS",
+        "group": "Finanzas",
+        "icon": "🧾",
+    },
+    {
+        "name": "Frescura DDV",
+        "description": "Seguimiento de frescura y control de distribucion.",
+        "url": "https://frescuraddv.streamlit.app/",
+        "group": "Calidad",
+        "icon": "❄️",
     },
 ]
 
@@ -163,6 +178,26 @@ st.markdown(
         font-weight: 700;
         margin-bottom: 10px;
     }
+    .card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+    .card-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        background: #f3f6fc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 54px;
+        font-size: 2rem;
+        line-height: 1;
+        box-shadow: inset 0 0 0 1px #e0e7f2;
+    }
     .card h2 {
         margin: 0 0 8px;
         font-size: 1.18rem;
@@ -251,7 +286,10 @@ for index, dashboard in enumerate(DASHBOARDS):
             f"""
             <div class="card">
                 <div>
-                    <span class="badge">{dashboard["group"]}</span>
+                    <div class="card-top">
+                        <span class="badge">{dashboard["group"]}</span>
+                        <span class="card-icon" aria-hidden="true">{dashboard["icon"]}</span>
+                    </div>
                     <h2>{dashboard["name"]}</h2>
                     <p>{dashboard["description"]}</p>
                 </div>

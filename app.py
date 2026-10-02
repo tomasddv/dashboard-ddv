@@ -55,6 +55,13 @@ DASHBOARDS = [
         "icon": "📈",
     },
     {
+        "name": "Consulta Acciones",
+        "description": "Consulta de descuentos, acciones y bultos por cliente.",
+        "url": "https://consultaacciones.streamlit.app/",
+        "group": "Ventas",
+        "icon": "🔎",
+    },
+    {
         "name": "Planificacion IFEE",
         "description": "Planificacion y consulta del tablero IFEE.",
         "url": "https://planificacion-ifeevprb7is4zwjk6k5suo.streamlit.app/",

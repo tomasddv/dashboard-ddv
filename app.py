@@ -55,13 +55,6 @@ DASHBOARDS = [
         "icon": "📈",
     },
     {
-        "name": "Consulta Acciones",
-        "description": "Consulta de descuentos, acciones y bultos por cliente.",
-        "url": "https://consultaacciones.streamlit.app/",
-        "group": "Ventas",
-        "icon": "🔎",
-    },
-    {
         "name": "Planificacion IFEE",
         "description": "Planificacion y consulta del tablero IFEE.",
         "url": "https://planificacion-ifeevprb7is4zwjk6k5suo.streamlit.app/",
@@ -95,6 +88,20 @@ DASHBOARDS = [
         "url": "https://frescuraddv.streamlit.app/",
         "group": "Calidad",
         "icon": "❄️",
+    },
+    {
+        "name": "CNC Gesti\u00f3n",
+        "description": "Tablero de gesti\u00f3n CNC.",
+        "url": "https://cncgestion.streamlit.app/",
+        "group": "Gesti\u00f3n",
+        "icon": "📋",
+    },
+    {
+        "name": "Ejecuci\u00f3n DDV",
+        "description": "Seguimiento de la ejecuci\u00f3n DDV.",
+        "url": "https://ejecucionddv.onrender.com/",
+        "group": "Operaciones",
+        "icon": "🎯",
     },
 ]
 
